@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 3</title>
+</head>
+<body>
+    
+    <label for="element">Enter Element: </label>
+    <input type="text" id="element">
+    <button onclick="addElement()">Add Element</button>
+    
+    <button onclick="displayArray()">Display Array</button>
+    
+    <button onclick="sortArray()">Sort Array</button>
+    
+    <ul id="arrayList"></ul>
+    
+    <script>
+        // Create an empty array
+        var myArray = [];
+        
+        function addElement() {
+            var elementInput = document.getElementById("element");
+            var elementValue = elementInput.value;
+            
+            if (elementValue !== "") {
+                myArray.push(elementValue);
+                elementInput.value = "";
+                alert("Element added: " + elementValue);
+            }
+        }
+        
+        function displayArray() {
+            var arrayList = document.getElementById("arrayList");
+            arrayList.innerHTML = ""; // Clear previous content
+            
+            for (var i = 0; i < myArray.length; i++) {
+                var listItem = document.createElement("li");
+                listItem.appendChild(document.createTextNode(myArray[i]));
+                arrayList.appendChild(listItem);
+            }
+        }
+        
+        function sortArray() {
+            myArray.sort();
+            displayArray();
+            alert("Array sorted.");
+        }
+    </script>
+</body>
+</html>

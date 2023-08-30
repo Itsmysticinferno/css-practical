@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical 2</title>
+  </head>
+  <body>
+    <form>
+      <label for="number">Enter the starting number</label>
+      <input
+        type="number"
+        id="StartNumber"
+        name="StartNumber"
+        required
+      /><br /><br />
+
+      <label for="number">Enter the ending number</label>
+      <input
+        type="number"
+        id="EndNumber"
+        name="EndNumber"
+        required
+      /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+  <script>
+    if (new Date().getDay() == 0) {
+      alert("Happy holiday");
+    } else {
+      alert("Working days");
+    }
+
+    //exercise during that practical>>>>
+
+    const form = document.querySelector("form");
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      showAlert();
+    });
+
+    function showAlert() {
+      var StartInputNumber = parseInt(
+        document.getElementById("StartNumber").value
+      );
+      var EndInputNumber = parseInt(document.getElementById("EndNumber").value);
+
+      var sum =0;
+
+      document.write(
+        "Odd numbers from " + StartInputNumber +" to " + EndInputNumber + "<br>");
+      for (var i = StartInputNumber; i <= EndInputNumber; i++) {
+        if (i % 2 != 0) {
+          document.write(i + "<br>");
+          sum=(sum+i)
+        }
+      }
+
+      document.write("Total= " + sum);
+     
+    }
+  </script>
+</html>

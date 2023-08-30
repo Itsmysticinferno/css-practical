@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 5</title>
+</head>
+<body>
+    
+    <label for="inputString">Enter a String: </label>
+    <input type="text" id="inputString">
+    <br>
+    
+    <button onclick="displayLength()">Display Length</button>
+    <button onclick="convertToUpperCase()">Convert to Uppercase</button>
+    <button onclick="convertToLowerCase()">Convert to Lowercase</button>
+    <button onclick="reverseString()">Reverse String</button>
+    
+    <h2>Result:</h2>
+    <p id="result"></p>
+    
+    <script>
+        function displayLength() {
+            var inputString = document.getElementById("inputString").value;
+            var length = inputString.length;
+            displayResult("Length: " + length);
+        }
+        
+        function convertToUpperCase() {
+            var inputString = document.getElementById("inputString").value;
+            var upperCaseString = inputString.toUpperCase();
+            displayResult("Uppercase: " + upperCaseString);
+        }
+        
+        function convertToLowerCase() {
+            var inputString = document.getElementById("inputString").value;
+            var lowerCaseString = inputString.toLowerCase();
+            displayResult("Lowercase: " + lowerCaseString);
+        }
+        
+        function reverseString() {
+            var inputString = document.getElementById("inputString").value;
+            var reversedString = inputString.split("").reverse().join("");
+            displayResult("Reversed: " + reversedString);
+        }
+        
+        function displayResult(result) {
+            var resultElement = document.getElementById("result");
+            resultElement.textContent = "Result: " + result;
+        }
+    </script>
+</body>
+</html>
